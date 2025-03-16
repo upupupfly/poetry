@@ -2,5 +2,7 @@
   "cSpell.words": [
     "nuxt",
     "unhead"
-  ]
+  ],
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize"
 }

@@ -1,19 +1,14 @@
 <template>
-  <AsideWrapper>
-    <aside class="story">
-      123
-    </aside>
-  </AsideWrapper>
+  <aside class="story">
+    <Search />
+  </aside>
 </template>
 
-<script setup>
-import AsideWrapper from "@/components/asideWrapper.vue";
+<script setup lang="ts">
+import Search from "@/components/search/index.vue";
 
 </script>
 
 <style lang="scss" scoped>
-.red {
-  color: $red;
-  font-size: 60px;
-}
+
 </style>

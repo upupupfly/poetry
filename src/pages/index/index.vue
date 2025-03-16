@@ -1,39 +1,37 @@
 <template>
-  <div class="content-wrapper">
-    <aside class="aside-wrapper" :class="{ active: visible  }">
-      <div>
-        visible:{{ visible }}
+    <Wrapper
+      v-model:aside-visible="asideVisible"
+      v-model:columns-visible="columnsVisible"
+      v-model:menu-visible="menuVisible"
+    >
+      <template #aside>
+        <Aside />
+      </template>
+
+      <template #columns>
+        <div style="height: 100%;background-color: brown;">columns</div>
+      </template>
+
+      <template #menu>
+        <div style="height: 100%;background-color: blueviolet;">menu</div>
+      </template>
+      <div style="height: 100%;background-color: #eeeeee;">
+        <div style="margin-top: 30px;" @click="asideVisible = !asideVisible">asideVisibleasideVisibleasideVisible</div>
+        <div style="margin-top: 30px;" @click="columnsVisible = !columnsVisible">columnsVisiblecolumnsVisiblecolumnsVisible</div>
+        <div style="margin-top: 30px;" @click="menuVisible = !menuVisible">menuVisiblemenuVisiblemenuVisible</div>
+        <Iconfont icon="os-icon-search" />
       </div>
-      <button @click="visible = !visible">X</button>
-      <div>
-        asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思asd a阿斯顿阿斯顿昂动爱思
-      </div>
-    </aside>
-    <div class="columns-wrapper"  :class="{ active: columnsVisible  }" :style="{ left: visible ? '600px' : '0' }">
-      <button @click="columnsVisible = !columnsVisible">X</button>
-    </div>
-    <main class="main-wrapper" :style="{ paddingLeft: visible ? paddingLeft : '0', paddingRight: menuVisible ? '200px' : '0' }">
-      测试文本asdasdddf212412412fasf测试文本asdasdddf212412412fasf测试文本asdasdddf212412412fasf测试文本asdasdddf212412412fasf
-    </main>
-    <div class="menu-wrapper"  :class="{ active: menuVisible  }">
-      <div>
-        menuVisible:{{ menuVisible }}
-      </div>
-      <button @click="menuVisible = !menuVisible">X</button>
-    </div>
-  </div>
+    </Wrapper>
 </template>
 
-<script setup>
-// import Aside from "./.components/aside.vue";
-const visible = ref(true);
-const columnsVisible = ref(true);
-const menuVisible = ref(true);
-const paddingLeft = computed(() => {
-  const asideW = visible.value ? 600 : 0;
-  const columnsW = columnsVisible.value ? 200 : 0;
-  return (asideW + columnsW) + "px";
-});
+<script setup lang="ts">
+import Wrapper from "@/components/wrapper/index.vue";
+import Aside from "./.components/aside.vue";
+
+const asideVisible = ref(true);
+const columnsVisible = ref(false);
+const menuVisible = ref(false);
+
 </script>
 
 <style lang="scss" scoped>
@@ -42,6 +40,7 @@ const paddingLeft = computed(() => {
   height: 100%;
   position: relative;
   overflow: hidden;
+  transition: all 0.4s ease-in-out;
 }
 
 .aside-wrapper {
@@ -50,7 +49,7 @@ const paddingLeft = computed(() => {
   top: 0;
   width: 600px;
   height: 100%;
-  transition: transform 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   background-color: #f5f5f5;
   transform: translateX(-100%);
   z-index: 2;
@@ -96,5 +95,4 @@ const paddingLeft = computed(() => {
   background-color: #bd9090;
   transition: padding 0.4s ease-in-out;
 }
-
 </style>

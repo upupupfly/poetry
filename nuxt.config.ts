@@ -13,15 +13,30 @@ export default defineNuxtConfig({
   //     pathPrefix: false
   //   }
   // ]
-  components: false,
+  components: [
+    {
+      path: "~/components/iconfont",
+      pathPrefix: false
+    }
+  ],
+  app: {
+    head: {
+      script: [
+        {
+          src: "/javascript/iconfont.js",
+        }
+      ]
+    }
+  },
   css: [
-    "normalize.css/normalize.css"
+    "normalize.css/normalize.css",
+    "~/assets/stylesheets/common.scss"
   ],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: "@use '~/assets/stylesheets/global.scss' as *;"
+          additionalData: "@use '~/assets/stylesheets/variable.scss' as *;"
         }
       }
     }
