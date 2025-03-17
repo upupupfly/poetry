@@ -4,7 +4,13 @@
     <aside v-if="$slots.aside" class="aside-wrapper" :class="{ active: asideVisible }" :style="asideStyle">
       <slot name="aside" />
     </aside>
-    <section v-if="$slots.columns" class="columns-wrapper" :class="{ active: columnsVisible }" :style="columnsStyle">
+    <section
+      v-if="$slots.columns"
+      class="columns-wrapper"
+      :class="{ active: columnsVisible }"
+      :style="columnsStyle"
+      @transitionend="onColumnsTransitionend"
+    >
       <slot name="columns" />
     </section>
     <main class="main-wrapper" :style="mainStyle">
@@ -31,6 +37,13 @@ const slotMap = useSlots();
 const asideVisible = defineModel<boolean>("asideVisible");
 const columnsVisible = defineModel<boolean>("columnsVisible");
 const menuVisible = defineModel<boolean>("menuVisible");
+const isHideColumns = ref(!columnsVisible.value);
+
+watch(columnsVisible, (newValue) => {
+  if (newValue) {
+    isHideColumns.value = false;
+  }
+})
   
 const asideStyle = computed(() => {
   return {
@@ -39,10 +52,10 @@ const asideStyle = computed(() => {
 });
 
 const columnsStyle = computed(() => {
-  const gapValue = 10;
   return {
     width: props.columnsWidth + "px",
-    left: asideVisible.value ? (props.asideWidth - gapValue) + "px" : '0'
+    left: asideVisible.value ? props.asideWidth+ "px" : "0",
+    opacity: isHideColumns.value ? 0 : 1,
   };
 });
 
@@ -63,6 +76,12 @@ const menuStyle = computed(() => {
     width: props.menuWidth + "px",
   };
 });
+
+const onColumnsTransitionend = () => {
+  if (!columnsVisible.value) {
+    isHideColumns.value = true;
+  }
+};
 </script>
 
 <style lang="scss" scoped>
