@@ -10,7 +10,7 @@
       
     </div>
     <button class="search-trigger" @click="handleShow">
-      <Iconfont icon="search" />
+      <Iconfont icon="search" class="search-icon" />
       <span>search</span>
     </button>
   </span>
@@ -109,6 +109,9 @@ const handleSearch =() => {
     vertical-align: middle;
     margin-left: 5px;
     text-transform: uppercase;
+  }
+  .search-icon {
+    vertical-align: -2px;
   }
 }
 </style>

@@ -8,3 +8,25 @@ span,p,div {
   font-size: 14px;
   font-family: "Unica One", sans-serif;
 }
+
+@font-face {
+  font-family: "Unica One";
+  src: url('~/assets/fonts/UnicaOne-Regular.ttf') format('ttf'),
+       url('~/assets/fonts/UnicaOne-Regular.woff2') format('woff2'),
+       url('~/assets/fonts/UnicaOne-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.aside-title {
+  font-size: 18px;
+  color: #4C4C4C;
+  transition: all 1s ease;
+  transition-delay: 1.3s;
+}

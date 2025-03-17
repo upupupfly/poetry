@@ -1,5 +1,6 @@
 <template>
   <aside class="story">
+    <AsideMap />
     <div class="head">
       <Search />
       <HideButton @click="handleHide" />
@@ -10,6 +11,7 @@
 <script setup lang="ts">
 import Search from "@/components/search/index.vue";
 import HideButton from "@/components/hideButton/index.vue";
+import AsideMap from "./map.vue";
 
 const emit = defineEmits(["hide"]);
 
@@ -26,6 +28,7 @@ const handleHide = () => {
   width: 100%;
   height: 100%;
   position: relative;
+  background-color: #f5f5f5;
   .head {
     width: 100%;
     height: 50px;
