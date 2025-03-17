@@ -39,9 +39,10 @@ const asideStyle = computed(() => {
 });
 
 const columnsStyle = computed(() => {
+  const gapValue = 10;
   return {
     width: props.columnsWidth + "px",
-    left: asideVisible.value ? props.asideWidth + "px" : '0'
+    left: asideVisible.value ? (props.asideWidth - gapValue) + "px" : '0'
   };
 });
 
@@ -80,6 +81,7 @@ const menuStyle = computed(() => {
   transition: transform 0.4s ease-in-out;
   transform: translateX(-100%);
   z-index: 2;
+  background: #ffffff;
 
   &.active {
     transform: translateX(0);
@@ -93,6 +95,7 @@ const menuStyle = computed(() => {
   transition: transform 0.4s ease-in-out, left 0.4s ease-in-out;
   transform: translateX(-100%);
   z-index: 1;
+  background: #ffffff;
 
   &.active {
     transform: translateX(0);
@@ -107,6 +110,7 @@ const menuStyle = computed(() => {
   transition: transform 0.4s ease-in-out;
   z-index: 1;
   transform: translateX(100%);
+  background: #ffffff;
 
   &.active {
     transform: translateX(0);
@@ -116,5 +120,6 @@ const menuStyle = computed(() => {
 .main-wrapper {
   width: 100%;
   transition: padding 0.4s ease-in-out;
+  background: #ffffff;
 }
 </style>
