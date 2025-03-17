@@ -1,8 +1,15 @@
 {
   "cSpell.words": [
+    "iconify",
     "nuxt",
     "unhead"
   ],
   "editor.tabSize": 2,
-  "editor.indentSize": "tabSize"
+  "editor.indentSize": "tabSize",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
 }

@@ -7,12 +7,12 @@ export default defineNuxtConfig({
   modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/scripts"],
   alias: {
   },
-  // components: [
-  //   {
-  //     path: "~/components/",
-  //     pathPrefix: false
-  //   }
-  // ]
+  // 构建时启动类型检查
+  // typescript: {
+  //   tsConfig: {
+  //   },
+  //   typeCheck: true
+  // },
   components: [
     {
       path: "~/components/iconfont",

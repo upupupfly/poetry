@@ -5,7 +5,7 @@
       v-model:menu-visible="menuVisible"
     >
       <template #aside>
-        <Aside />
+        <Aside @hide="asideVisible = false" />
       </template>
 
       <template #columns>

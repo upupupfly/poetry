@@ -1,5 +1,5 @@
 <template>
-   <div class="default">
+   <div class="poetry">
       <slot />
    </div>
 </template>
@@ -9,7 +9,7 @@
 </script>
 
 <style lang="scss" scoped>
-.default {
+.poetry {
   width: 100vw;
   height: 100vh;
 }
