@@ -1,11 +1,19 @@
-// @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs'
+import eslint from "@eslint/js";
+import withNuxt from "./.nuxt/eslint.config.mjs";
 
 export default withNuxt(
-  // Your custom configs here
+  eslint.configs.recommended,
   {
-  rules: {
-      "vue/multi-word-component-names": "off"
-    }
-  }
-)
+    languageOptions: {
+      globals: {
+        defineNuxtConfig: "readonly",
+      },
+    },
+    files: ["**/*.vue", "**/*.ts"],
+    rules: {
+      "vue/multi-word-component-names": "off",
+      "no-extra-parens": "off",
+      "@stylistic/semi": ["error", "always", { omitLastInOneLineBlock: false, omitLastInOneLineClassBody: false }],
+    },
+  },
+);

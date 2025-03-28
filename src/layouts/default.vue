@@ -1,7 +1,7 @@
 <template>
-   <div class="poetry">
-      <slot />
-   </div>
+  <div class="poetry">
+    <slot />
+  </div>
 </template>
 
 <script setup lang="ts">

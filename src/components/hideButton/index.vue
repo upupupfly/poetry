@@ -1,14 +1,12 @@
 <template>
-  <button  class="hide-button">
+  <button class="hide-button">
     <span />
     <span />
     <span />
   </button>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .hide-button {
@@ -45,14 +43,17 @@
 
   &:hover {
     transform: rotate(0deg);
+
     > span {
       opacity: 1;
     }
+
     > span:first-child {
-      transform: rotate(-45deg) translate(-5px,-1px) scaleX(0.5);
+      transform: rotate(-45deg) translate(-5px, -1px) scaleX(0.5);
     }
+
     > span:last-child {
-      transform: rotate(45deg) translate(-5px,1px) scaleX(0.5);
+      transform: rotate(45deg) translate(-5px, 1px) scaleX(0.5);
     }
   }
 }

@@ -1,7 +1,6 @@
-
 <template>
   <div class="red test">
-   11122
+    11122
   </div>
 </template>
 

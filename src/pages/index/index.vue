@@ -1,37 +1,55 @@
 <template>
-    <Wrapper
-      v-model:aside-visible="asideVisible"
-      v-model:columns-visible="columnsVisible"
-      v-model:menu-visible="menuVisible"
-    >
-      <template #aside>
-        <Aside @hide="asideVisible = false" />
-      </template>
+  <Wrapper
+    v-model:aside-visible="asideVisible"
+    v-model:columns-visible="columnsVisible"
+    v-model:menu-visible="menuVisible"
+  >
+    <template #aside>
+      <Aside @hide="asideVisible = false" />
+    </template>
 
-      <template #columns>
-        <div style="height: 100%;background-color: brown;">columns</div>
-      </template>
-
-      <template #menu>
-        <div style="height: 100%;background-color: blueviolet;">menu</div>
-      </template>
-      <div style="height: 100%;background-color: #eeeeee;">
-        <div style="margin-top: 30px;" @click="asideVisible = !asideVisible">asideVisibleasideVisibleasideVisible</div>
-        <div style="margin-top: 30px;" @click="columnsVisible = !columnsVisible">columnsVisiblecolumnsVisiblecolumnsVisible</div>
-        <div style="margin-top: 30px;" @click="menuVisible = !menuVisible">menuVisiblemenuVisiblemenuVisible</div>
-        <Iconfont icon="os-icon-search" />
+    <template #columns>
+      <div style="height: 100%;background-color: brown;">
+        columns
       </div>
-    </Wrapper>
+    </template>
+
+    <template #menu>
+      <div style="height: 100%;background-color: blueviolet;">
+        menu
+      </div>
+    </template>
+    <div style="height: 100%;background-color: #eeeeee;">
+      <div
+        style="margin-top: 30px;"
+        @click="asideVisible = !asideVisible"
+      >
+        asideVisibleasideVisibleasideVisible
+      </div>
+      <div
+        style="margin-top: 30px;"
+        @click="columnsVisible = !columnsVisible"
+      >
+        columnsVisiblecolumnsVisiblecolumnsVisible
+      </div>
+      <div
+        style="margin-top: 30px;"
+        @click="menuVisible = !menuVisible"
+      >
+        menuVisiblemenuVisiblemenuVisible
+      </div>
+      <Iconfont icon="os-icon-search" />
+    </div>
+  </Wrapper>
 </template>
 
 <script setup lang="ts">
-import Wrapper from "@/components/wrapper/index.vue";
-import Aside from "./.components/aside.vue";
+import Aside from "./_components/aside.vue";
+import Wrapper from "~/components/wrapper/index.vue";
 
 const asideVisible = ref(true);
 const columnsVisible = ref(false);
 const menuVisible = ref(false);
-
 </script>
 
 <style lang="scss" scoped>

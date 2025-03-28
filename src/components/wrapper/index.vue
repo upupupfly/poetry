@@ -1,7 +1,12 @@
 <template>
   <!-- 主要页面容器 -->
   <div class="content-wrapper">
-    <aside v-if="$slots.aside" class="aside-wrapper" :class="{ active: asideVisible }" :style="asideStyle">
+    <aside
+      v-if="$slots.aside"
+      class="aside-wrapper"
+      :class="{ active: asideVisible }"
+      :style="asideStyle"
+    >
       <slot name="aside" />
     </aside>
     <section
@@ -13,10 +18,18 @@
     >
       <slot name="columns" />
     </section>
-    <main class="main-wrapper" :style="mainStyle">
+    <main
+      class="main-wrapper"
+      :style="mainStyle"
+    >
       <slot />
     </main>
-    <aside v-if="$slots.menu" class="menu-wrapper" :class="{ active: menuVisible }" :style="menuStyle">
+    <aside
+      v-if="$slots.menu"
+      class="menu-wrapper"
+      :class="{ active: menuVisible }"
+      :style="menuStyle"
+    >
       <slot name="menu" />
     </aside>
   </div>
@@ -43,8 +56,8 @@ watch(columnsVisible, (newValue) => {
   if (newValue) {
     isHideColumns.value = false;
   }
-})
-  
+});
+
 const asideStyle = computed(() => {
   return {
     width: props.asideWidth + "px",
@@ -54,7 +67,7 @@ const asideStyle = computed(() => {
 const columnsStyle = computed(() => {
   return {
     width: props.columnsWidth + "px",
-    left: asideVisible.value ? props.asideWidth+ "px" : "0",
+    left: asideVisible.value ? props.asideWidth + "px" : "0",
     opacity: isHideColumns.value ? 0 : 1,
   };
 });
@@ -111,7 +124,9 @@ const onColumnsTransitionend = () => {
   position: absolute;
   top: 0;
   height: 100%;
-  transition: transform 0.4s ease-in-out, left 0.4s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    left 0.4s ease-in-out;
   transform: translateX(-100%);
   z-index: 1;
   background: #ffffff;

@@ -1,16 +1,39 @@
 <template>
   <span class="search-wrapper">
-    <div class="search-form" :class="{ active: visible }">
-      <Iconfont icon="search" class="search-icon" />
-      <input ref="inputRef" v-model="keywords" class="search-input" placeholder="搜索..." >
-      <button class="search-btn" @click="handleSearch">搜索</button>
-      <button class="close-btn" @click="visible = false">
+    <div
+      class="search-form"
+      :class="{ active: visible }"
+    >
+      <Iconfont
+        icon="search"
+        class="search-icon"
+      />
+      <input
+        ref="inputRef"
+        v-model="keywords"
+        class="search-input"
+        placeholder="搜索..."
+      >
+      <button
+        class="search-btn"
+        @click="handleSearch"
+      >搜索</button>
+      <button
+        class="close-btn"
+        @click="visible = false"
+      >
         <Iconfont icon="close" />
       </button>
-      
+
     </div>
-    <button class="search-trigger" @click="handleShow">
-      <Iconfont icon="search" class="search-icon" />
+    <button
+      class="search-trigger"
+      @click="handleShow"
+    >
+      <Iconfont
+        icon="search"
+        class="search-icon"
+      />
       <span>search</span>
     </button>
   </span>
@@ -32,10 +55,10 @@ const handleShow = () => {
 /**
  * 搜索
  */
-const handleSearch =() => {
+const handleSearch = () => {
   // Todo点击搜索后带着搜索关键词跳转搜索结果页面
   visible.value = false;
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -109,6 +132,7 @@ const handleSearch =() => {
     vertical-align: middle;
     margin-left: 5px;
     text-transform: uppercase;
+    font-family: "Unica One", sans-serif;
   }
   .search-icon {
     vertical-align: -2px;

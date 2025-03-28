@@ -7,14 +7,15 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "clean": "npx nuxi cleanup",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxt/eslint": "1.2.0",
     "@nuxt/image": "1.9.0",
     "@nuxt/scripts": "0.11.2",
     "@unhead/vue": "2.0.0-rc.12",
-    "eslint": "9.22.0",
     "ipx": "3.0.1",
     "normalize.css": "8.0.1",
     "nuxt": "3.16.0",
@@ -22,6 +23,12 @@
     "vue-router": "4.5.0"
   },
   "devDependencies": {
-    "sass": "1.85.1"
+    "@nuxt/eslint": "1.2.0",
+    "@stylistic/eslint-plugin": "4.2.0",
+    "eslint": "9.22.0",
+    "eslint-plugin-format": "1.0.1",
+    "sass": "1.85.1",
+    "typescript": "5.8.2",
+    "vite-plugin-eslint2": "5.0.3"
   }
 }

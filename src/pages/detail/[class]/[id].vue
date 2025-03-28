@@ -1,15 +1,14 @@
 <template>
   <div class="red test">
-   class: {{ route.params.class }}
-   ID: {{ route.params.id }}
+    class: {{ route.params.class }}
+    ID: {{ route.params.id }}
   </div>
 </template>
 
 <script setup lang="ts">
 const route = useRoute();
 
-console.log("route", route)
-
+console.log("route", route);
 </script>
 
 <style lang="scss" scoped>

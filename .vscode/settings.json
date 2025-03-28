@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
     "iconify",
+    "nuxi",
     "nuxt",
     "unhead"
   ],
@@ -11,5 +12,5 @@
   },
   "editor.quickSuggestions": {
     "strings": "on"
-  }
+  },
 }
